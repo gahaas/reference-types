@@ -49,6 +49,12 @@ Typing extensions:
   - `nullref` is merely an internal type and is neither expressible in the binary format, nor the text format, nor the JS API.
   - Question: should it be?
 
+* The `anyref` type is encoded as 0x7a:
+```
+reftype ::= ...
+          | 0x7A => anyref
+```
+
 * Value types (of locals, globals, function parameters and results) can now be either numeric types or reference types.
   - `numtype ::= i32 | i64 | f32 | f64`
   - `valtype ::= <numtype> | <reftype>`
